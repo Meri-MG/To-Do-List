@@ -1,12 +1,29 @@
-import _ from 'lodash';
 import './style.css';
 
-function component() {
-  const element = document.createElement('div');
+const listContainer = document.querySelector('.todo-lists');
+const objectArray = [
+  {
+    description: 'Do Yoga',
+    completed: false,
+    id: 1,
+  },
+  {
+    description: 'Submit Project',
+    completed: false,
+    id: 2,
+  },
+];
 
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-  return element;
+function addTodo(array) {
+  listContainer.innerHTML += `<li class="d-flex list-container">
+  <input type="checkbox" class="checkbox" id="${array.id}" checked>
+  <p class="items checked">${array.description}</p>
+  <i class="fas fa-ellipsis-v dots"></i>
+  </li>`;
 }
 
-document.body.appendChild(component());
+function displayTodo() {
+  a
+}
+
+addTodo();
