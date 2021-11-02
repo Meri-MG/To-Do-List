@@ -74,28 +74,6 @@ main {
   background-color: #fff;
 }
 
-/* completed styles */
-
-/* .fa-square {
-  display: flex;
-  margin-left: 5px;
-  cursor: pointer;
-}
-
-.fa-square.uncheked {
-  display: none;
-}
-
-.fa-check-square {
-  display: none;
-}
-
-.fa-check-square.checked {
-  display: flex;
-  margin-left: 5px;
-  cursor: pointer;
-} */
-
 .items {
   flex: 1;
   margin-left: 10px;
