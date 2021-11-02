@@ -79,7 +79,7 @@ main {
   margin-left: 10px;
 }
 
-.items.checked {
+.items.linethrough {
   text-decoration: line-through;
   opacity: 0.5;
 }
