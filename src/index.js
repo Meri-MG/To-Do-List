@@ -1,10 +1,8 @@
 import './style.css';
-import { completed, getFromStorage, saveToStorage } from './interactive.js';
+import { completed, saveToStorage } from './interactive.js';
 
 const listContainer = document.querySelector('.todo-lists');
-const liElement = document.querySelector('.list-container');
-const checkbox = document.querySelector('.checkbox');
-let todoLists = [
+const todoLists = [
   {
     description: 'Do Yoga',
     completed: false,
@@ -51,19 +49,11 @@ function clearElement(element) {
 function addTodo() {
   clearElement(listContainer);
   todoLists.forEach((list) => {
-    if (list.completed === true) {
-      listContainer.innerHTML += `<li class="d-flex list-container">
-    <input type="checkbox" class="checkbox" id="${list.id}" checked>
-    <p class="items" id="${list.id}">${list.description}</p>
-    <i class="fas fa-ellipsis-v dots"></i>
-  </li>`;
-    } else {
-      listContainer.innerHTML += `<li class="d-flex list-container">
+    listContainer.innerHTML += `<li class="d-flex list-container">
     <input type="checkbox" class="checkbox" id="${list.id}">
     <p class="items" id="${list.id}">${list.description}</p>
     <i class="fas fa-ellipsis-v dots"></i>
     </li>`;
-    }
   });
 }
 
@@ -74,17 +64,19 @@ function displayTodo() {
   addTodo();
 }
 
+// load the page
+
 window.addEventListener('DOMContentLoaded', () => {
   if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
-    todoLists = getFromStorage();
-    displayTodo();
+    displayTodo(todoLists);
   }
   saveToStorage(todoLists);
 });
 
+// task completed
+
 listContainer.addEventListener('click', (e) => {
   if (e.target.classList.contains('checkbox')) {
     completed(e.target, todoLists);
-    saveToStorage(todoLists);
   }
 });
