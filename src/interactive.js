@@ -26,13 +26,6 @@ export function completed(element, list) {
     }
     saveToStorage(list);
   });
-
-  // const item = document.querySelector('.checkbox');
-  // if (item.checked) {
-  //   item.nextElementSibling.classList.add('linethrough');
-  // } else {
-  //   item.nextElementSibling.classList.remove('linethrough');
-  // }
 }
 
 export default { completed, getFromStorage, saveToStorage };
