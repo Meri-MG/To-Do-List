@@ -1,76 +1,55 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
-# Project Name
-
-> One paragraph statement about the project.
-
-![screenshot](./app_screenshot.png)
-
-Additional description about the project and its features.
-
-## Built With
-
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo
-
-[Live Demo Link](https://livedemo.com)
+# Awesome-Books-jsObjects
+> In this project was built a simple HTML list of To Do tasks. The list was styled according to the specifications listed in the lesson. This simple web page was built using webpack and served by a webpack dev server according to this [template](https://web.archive.org/web/20180320194056/http://www.getminimalist.com:80/)
 
 
-## Getting Started
+# Built with
+- HTML5
+- CSS3
+- JavaScript
+- Webpack
+- Git and GitHub
+- VScode
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+# Live Demo
+> The live Demo of the project is [here](https://meri-mg.github.io/To-Do-List/dist/)
 
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
+# Getting Started
+## Prerequisites:
 
 
+- Create an account on github
 
-## Authors
+- Install gitbash or use git on the command line.
 
-👤 **Author1**
+- Use an IDE of your preference such as VScode.
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+## Steps to follow:
 
-👤 **Author2**
+- Choose a folder in your local machine where you want this repository to be copied
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- Clone this [repository](https://github.com/Meri-MG/To-Do-List-Project) to your locaL machine with `git clone` command.
+It should look similar to this git clone https://github.com/smithj/azure-docs.git Enter your github credentials if prompted.
+
+- On the command line, at the project's root, run 'npm install' to install app dependencies.
+
+- Next, run 'npm start' which will run the app in the development mode.
+
+- Open the index.html file with the browser of your preference.
+
+
+# 👤 Author 1 - Meri Gogichashvili
+- GitHub: [Meri-MG](https://github.com/Meri-MG) 
+- LinkedIn: [Meri Gogichashvili](https://www.linkedin.com/feed/)
 
 ## 🤝 Contributing
+- Contributions, issues, and feature requests are welcome!
+- Feel free to check the [issues page](https://github.com/Meri-MG/To-Do-List-Project/issues).
 
-Contributions, issues, and feature requests are welcome!
+# Show your support
+Give a ⭐ if you like this project!
 
-Feel free to check the [issues page](../../issues/).
+# Acknowledgments
+Thanks to my teammates, learning and coding partners.
 
-## Show your support
-
-Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
-## 📝 License
-
-This project is [MIT](./MIT.md) licensed.
+# License
+This project is MIT licensed.
