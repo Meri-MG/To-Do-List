@@ -1,9 +1,10 @@
 import './style.css';
-import { completed } from './interactive.js';
+import { completed, getFromStorage, saveToStorage } from './interactive.js';
 
 const listContainer = document.querySelector('.todo-lists');
+const liElement = document.querySelector('.list-container');
 const checkbox = document.querySelector('.checkbox');
-const todoLists = [
+let todoLists = [
   {
     description: 'Do Yoga',
     completed: false,
@@ -63,7 +64,6 @@ function addTodo() {
     <i class="fas fa-ellipsis-v dots"></i>
     </li>`;
     }
-    
   });
 }
 
@@ -74,7 +74,17 @@ function displayTodo() {
   addTodo();
 }
 
-displayTodo();
-document.querySelector('.checkbox').addEventListener('change', (e) => {
-  todoLists.forEach((item) => { item = completed(checkbox, todoLists); });
+window.addEventListener('DOMContentLoaded', () => {
+  if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+    todoLists = getFromStorage();
+    displayTodo();
+  }
+  saveToStorage(todoLists);
+});
+
+listContainer.addEventListener('click', (e) => {
+  if (e.target.classList.contains('checkbox')) {
+    completed(e.target, todoLists);
+    saveToStorage(todoLists);
+  }
 });

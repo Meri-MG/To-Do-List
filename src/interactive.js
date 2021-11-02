@@ -1,17 +1,39 @@
-// const linethrough = 'linethrough';
-// const checked = 'fa-check-square';
-// const unchecked = 'fa-square';
+export function getFromStorage() {
+  return localStorage.getItem('Tasks') ? JSON.parse(localStorage.getItem('Tasks')) : [];
+}
 
-export const completed = (element, array) => {
+export function saveToStorage(list) {
+  localStorage.setItem('Tasks', JSON.stringify(list));
+}
+
+export function completed(element, list) {
   element = document.querySelector('.checkbox');
-  array.forEach((item) => {
-    if (element.checked) {
+  element.addEventListener('change', () => {
+    const task = element.nextElementSibling.innerHTML;
+    if (element.checked === true) {
+      list.forEach((item) => {
+        if (item.todoText === task) {
+          item.completed = true;
+        }
+      });
       element.nextElementSibling.classList.add('linethrough');
     } else {
-      element.nextElementSibling.classList.remove('linethrough');
+      list.forEach((item) => {
+        if (item.todoText === task) {
+          item.completed = false;
+        }
+        element.nextElementSibling.classList.remove('linethrough');
+      });
     }
-  })
-  
-};
+    saveToStorage(list);
+  });
 
-export default { completed };
+  // const item = document.querySelector('.checkbox');
+  // if (item.checked) {
+  //   item.nextElementSibling.classList.add('linethrough');
+  // } else {
+  //   item.nextElementSibling.classList.remove('linethrough');
+  // }
+}
+
+export default { completed, getFromStorage, saveToStorage };
