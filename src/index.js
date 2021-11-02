@@ -1,7 +1,7 @@
 import './style.css';
 
 const listContainer = document.querySelector('.todo-lists');
-const objectArray = [
+const todoLists = [
   {
     description: 'Do Yoga',
     completed: false,
@@ -14,16 +14,21 @@ const objectArray = [
   },
 ];
 
-function addTodo(array) {
-  listContainer.innerHTML += `<li class="d-flex list-container">
-  <input type="checkbox" class="checkbox" id="${array.id}" checked>
-  <p class="items checked">${array.description}</p>
+function addTodo() {
+  todoLists.forEach((list) => {
+    listContainer.innerHTML += `<li class="d-flex list-container">
+  <input type="checkbox" class="checkbox" checked>
+  <p class="items checked">${list.description}</p>
   <i class="fas fa-ellipsis-v dots"></i>
   </li>`;
+  });
 }
 
-function displayTodo() {
-  a
-}
+// function displayTodo() {
+//   a
+// }
 
 addTodo();
+listContainer.addEventListener('click', () => {
+  console.log();
+})
