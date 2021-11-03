@@ -62,12 +62,11 @@ function reindex(todoLists) {
   displayTodo();
 }
 
-function editTask(e){
+function editTask(e) {
   const id = e.target.dataset.id;
   const desc = e.target.innerText;
-  
-  todoLists.forEach(task => {
-    if (task.id == id){
+  todoLists.forEach((task) => {
+    if (task.id === id) {
       task.description = desc;
     }
   });
