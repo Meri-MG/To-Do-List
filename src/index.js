@@ -97,6 +97,11 @@ listContainer.addEventListener('dblclick', (e) => {
     saveToStorage(todoLists);
     window.location.reload();
   }
+  text.addEventListener('blur', () => {
+    todoLists.filter((item) => item.description !== text);
+    saveToStorage(todoLists);
+    window.location.reload();
+  });
 });
 
 // delete all completed
