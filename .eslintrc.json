@@ -14,7 +14,6 @@
       "no-shadow": "off",
       "no-param-reassign": "off",
       "eol-last": "off",
-      "eqeqeq": "off",
       "import/extensions": [ 1, {
         "js": "always", "json": "always"
       }]

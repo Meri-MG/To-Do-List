@@ -1,4 +1,4 @@
-# Awesome-Books-jsObjects
+# To Do List
 > In this project was built a simple HTML list of To Do tasks. The list was styled according to the specifications listed in the lesson. This simple web page was built using webpack and served by a webpack dev server according to this [template](https://web.archive.org/web/20180320194056/http://www.getminimalist.com:80/)
 
 

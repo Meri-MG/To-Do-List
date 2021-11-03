@@ -1,24 +1,11 @@
 import './style.css';
-import { completed, saveToStorage } from './interactive.js';
+import { completed, saveToStorage, getFromStorage } from './interactive.js';
+import { addTodoToList, deleteTodoList } from './add_remove.js';
 
 const listContainer = document.querySelector('.todo-lists');
-const todoLists = [
-  {
-    description: 'Do Yoga',
-    completed: false,
-    id: 1,
-  },
-  {
-    description: 'Submit the Project',
-    completed: false,
-    id: 3,
-  },
-  {
-    description: 'Walk the dog',
-    completed: false,
-    id: 2,
-  },
-];
+const form = document.querySelector('.input-container');
+const clearCompleted = document.querySelector('.btn');
+let todoLists = [];
 
 // check the order of the todo lists
 
@@ -49,10 +36,11 @@ function clearElement(element) {
 function addTodo() {
   clearElement(listContainer);
   todoLists.forEach((list) => {
-    listContainer.innerHTML += `<li class="d-flex list-container">
-    <input type="checkbox" class="checkbox" id="${list.id}">
-    <p class="items" id="${list.id}">${list.description}</p>
+    listContainer.innerHTML += `<li class="list-container d-flex">
+    <input type="checkbox" class="checkbox">
+    <p class="items" contenteditable="true">${list.description}</p>
     <i class="fas fa-ellipsis-v dots"></i>
+    <i class="far fa-trash-alt delete"></i>
     </li>`;
   });
 }
@@ -68,7 +56,8 @@ function displayTodo() {
 
 window.addEventListener('DOMContentLoaded', () => {
   if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
-    displayTodo(todoLists);
+    todoLists = getFromStorage();
+    displayTodo();
   }
   saveToStorage(todoLists);
 });
@@ -79,4 +68,41 @@ listContainer.addEventListener('click', (e) => {
   if (e.target.classList.contains('checkbox')) {
     completed(e.target, todoLists);
   }
+});
+
+// add the task
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const todoInput = document.getElementById('myInput').value;
+  if (todoInput === '') {
+    alert('Please, enter the To Do for the day');
+  } else {
+    addTodoToList(todoInput, false, todoLists.length, todoLists);
+    addTodo();
+    saveToStorage(todoLists);
+    form.reset();
+  }
+});
+
+// delete the task
+
+listContainer.addEventListener('dblclick', (e) => {
+  const text = document.querySelector('.items').textContent;
+  if (e.target.classList.contains('list-container')) {
+    deleteTodoList(e.target);
+  }
+  if (e.target.classList.contains('delete')) {
+    todoLists = todoLists.filter((item) => item.description !== text);
+    saveToStorage(todoLists);
+    window.location.reload();
+  }
+});
+
+// delete all completed
+
+clearCompleted.addEventListener('click', () => {
+  todoLists = todoLists.filter((item) => item.completed === false);
+  saveToStorage(todoLists);
+  window.location.reload();
 });

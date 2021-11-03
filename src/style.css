@@ -68,6 +68,8 @@ main {
   margin: 0 auto;
   justify-content: space-between;
   flex-direction: row;
+  border-bottom: 1px solid rgb(197, 182, 182);
+  cursor: pointer;
 }
 
 .list-container:nth-child(odd) {
@@ -84,8 +86,34 @@ main {
   opacity: 0.5;
 }
 
+[contenteditable] {
+  outline: 0 solid transparent;
+}
+
+.checkbox:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
 .dots {
   margin-right: 5px;
+}
+
+.delete {
+  display: none;
+}
+
+.delete.show {
+  display: flex;
+  padding-right: 4%;
+}
+
+.list-container.show {
+  background-color: rgb(221, 212, 212);
+}
+
+.dots.none {
+  display: none;
 }
 
 .btn {
