@@ -36,9 +36,11 @@ function clearElement(element) {
 function addTodo() {
   clearElement(listContainer);
   todoLists.forEach((list) => {
+    const taskCompleted = list.completed ? 'linethrough' : '';
+    const checked = list.completed ? 'checked' : '';
     listContainer.innerHTML += `<li class="list-container d-flex">
-    <input type="checkbox" class="checkbox">
-    <p class="items" contenteditable="true">${list.description}</p>
+    <input type="checkbox" class="checkbox" ${checked}>
+    <p class="items ${taskCompleted}" data-id="${list.id} onkeypress="editTask(e)" contenteditable="true">${list.description}</p>
     <i class="fas fa-ellipsis-v dots"></i>
     <i class="far fa-trash-alt delete"></i>
     </li>`;
@@ -52,7 +54,6 @@ function displayTodo() {
   addTodo();
 }
 
-
 function reindex(todoLists) {
   todoLists.forEach((todo, i)=>{
     todo.id = i;
@@ -60,6 +61,20 @@ function reindex(todoLists) {
   saveToStorage(todoLists);
   displayTodo();
 }
+
+function editTask(e){
+  const id = e.target.dataset.id;
+  const desc = e.target.innerText;
+  
+  todoLists.forEach(task => {
+    if (task.id == id){
+      task.description = desc;
+    }
+  });
+  saveToStorage(todoLists);
+  displayTodo();
+}
+
 // load the page
 
 window.addEventListener('DOMContentLoaded', () => {
