@@ -4,6 +4,7 @@ export function getFromStorage() {
 
 export function saveToStorage(list) {
   localStorage.setItem('Tasks', JSON.stringify(list));
+  return list;
 }
 
 export function completed(element, list) {

@@ -52,6 +52,14 @@ function displayTodo() {
   addTodo();
 }
 
+
+function reindex(todoLists) {
+  todoLists.forEach((todo, i)=>{
+    todo.id = i;
+  });
+  saveToStorage(todoLists);
+  displayTodo();
+}
 // load the page
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -94,7 +102,7 @@ listContainer.addEventListener('dblclick', (e) => {
   }
   if (e.target.classList.contains('delete')) {
     todoLists = todoLists.filter((item) => item.description !== text);
-    saveToStorage(todoLists);
+    reindex(todoLists);
     window.location.reload();
   }
   text.addEventListener('blur', () => {
@@ -108,6 +116,7 @@ listContainer.addEventListener('dblclick', (e) => {
 
 clearCompleted.addEventListener('click', () => {
   todoLists = todoLists.filter((item) => item.completed === false);
+  reindex(todoLists);
   saveToStorage(todoLists);
   window.location.reload();
 });
