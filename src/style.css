@@ -22,7 +22,9 @@ body {
   padding: 10px;
 }
 
-main {
+main,
+section {
+  margin-top: 50px;
   width: 40%;
   background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
   backdrop-filter: blur(2rem);
@@ -92,7 +94,7 @@ main {
 }
 
 [contenteditable]:hover {
-  background-color: rgba(0, 0, 0, 0.24);
+  background-color: rgba(146, 141, 141, 0.24);
 }
 
 .checkbox:hover {
@@ -135,4 +137,8 @@ main {
 .btn:hover {
   text-decoration: underline;
   opacity: 1.1;
+}
+
+h2 {
+  text-align: center;
 }

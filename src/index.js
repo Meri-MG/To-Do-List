@@ -24,7 +24,7 @@ function checkOrder() {
   });
 }
 
-// clear previous elements in the container
+// cleat previous elements in the container
 
 function clearElement(element) {
   while (element.firstChild) {
@@ -32,16 +32,18 @@ function clearElement(element) {
   }
 }
 
-function editTask(e) {
-  const element = e.target;
-  const elDataset = element.dataset;
-  const index = elDataset.id;
-  const desc = e.target.innerText;
+function changeTask(e) {
+  const el = e.target;
+  const index = el.dataset.id;
+  const desc = el.innerText;
+
   todoLists.forEach((task) => {
-    if (task.id === index) {
+    if (task.id == index) {
       task.description = desc;
     }
   });
+
+  console.log(todoLists);
   saveToStorage(todoLists);
 }
 
@@ -49,15 +51,16 @@ function bindListenerTasks() {
   const items = document.querySelectorAll('.items');
   items.forEach((item) => {
     item.removeEventListener('blur', (e) => {
-      editTask(e);
+      changeTask(e);
     });
   });
   items.forEach((item) => {
     item.addEventListener('blur', (e) => {
-      editTask(e);
+      changeTask(e);
     });
   });
 }
+
 // add todo lists to the object
 
 function addTodo() {
@@ -66,8 +69,8 @@ function addTodo() {
     const taskCompleted = list.completed ? 'linethrough' : '';
     const checked = list.completed ? 'checked' : '';
     listContainer.innerHTML += `<li class="list-container d-flex">
-    <input type="checkbox" class="checkbox" ${checked}>
-    <p class="items ${taskCompleted}" data-id="${list.id} onkeypress="editTask(e)" contenteditable="true">${list.description}</p>
+    <input type="checkbox" class="checkbox" ${checked} >
+    <p class="items ${taskCompleted}" data-id="${list.id}" contenteditable="true">${list.description}</p>
     <i class="fas fa-ellipsis-v dots"></i>
     <i class="far fa-trash-alt delete"></i>
     </li>`;
@@ -128,23 +131,19 @@ form.addEventListener('submit', (e) => {
 // delete the task
 
 listContainer.addEventListener('click', (e) => {
-  const text = document.querySelector('.items').textContent;
+  const task = document.querySelector('.items').textContent;
   if (e.target.classList.contains('list-container')) {
-    deleteTodoList(e.target);
+    deleteTodoList(e.target); // ui;
   }
   if (e.target.classList.contains('delete')) {
-    todoLists = todoLists.filter((item) => item.description !== text);
+    todoLists = todoLists.filter((item) => item.description !== task);
     reindex(todoLists);
+    // saveToStorage(todoLists);
     window.location.reload();
   }
-  text.addEventListener('blur', () => {
-    todoLists.filter((item) => item.description !== text);
-    saveToStorage(todoLists);
-    window.location.reload();
-  });
 });
 
-// clear all completed
+// delete all completed
 
 clearCompleted.addEventListener('click', () => {
   todoLists = todoLists.filter((item) => item.completed === false);
