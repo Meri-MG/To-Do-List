@@ -12,9 +12,9 @@
     "extends": ["airbnb-base"],
     "rules": {
       "no-shadow": "off",
+      "eqeqeq": "off",
       "no-param-reassign": "off",
       "eol-last": "off",
-      "eqeqeq": "off",
       "import/extensions": [ 1, {
         "js": "always", "json": "always"
       }]

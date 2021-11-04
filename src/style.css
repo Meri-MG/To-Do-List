@@ -9,7 +9,7 @@ body {
 
 .d-flex {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
 }
@@ -22,7 +22,9 @@ body {
   padding: 10px;
 }
 
-main {
+main,
+section {
+  margin-top: 50px;
   width: 40%;
   background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
   backdrop-filter: blur(2rem);
@@ -68,6 +70,8 @@ main {
   margin: 0 auto;
   justify-content: space-between;
   flex-direction: row;
+  border-bottom: 1px solid rgb(197, 182, 182);
+  cursor: pointer;
 }
 
 .list-container:nth-child(odd) {
@@ -77,6 +81,7 @@ main {
 .items {
   flex: 1;
   margin-left: 10px;
+  padding-left: 10px;
 }
 
 .items.linethrough {
@@ -84,8 +89,39 @@ main {
   opacity: 0.5;
 }
 
+[contenteditable] {
+  outline: 0 solid transparent;
+}
+
+[contenteditable]:hover {
+  background-color: rgba(146, 141, 141, 0.24);
+}
+
+.checkbox:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
 .dots {
   margin-right: 5px;
+  margin-left: 15px;
+}
+
+.delete {
+  display: none;
+}
+
+.delete.show {
+  display: flex;
+  padding-right: 4%;
+}
+
+.list-container.show {
+  background-color: rgb(221, 212, 212);
+}
+
+.dots.none {
+  display: none;
 }
 
 .btn {
@@ -101,4 +137,8 @@ main {
 .btn:hover {
   text-decoration: underline;
   opacity: 1.1;
+}
+
+h2 {
+  text-align: center;
 }

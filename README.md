@@ -1,5 +1,5 @@
-# Awesome-Books-jsObjects
-> In this project was built a simple HTML list of To Do tasks. The list was styled according to the specifications listed in the lesson. This simple web page was built using webpack and served by a webpack dev server according to this [template](https://web.archive.org/web/20180320194056/http://www.getminimalist.com:80/)
+# To Do List
+> In this project was built a simple list of To Do tasks. The functionality was implemented according to the specifications listed in the lesson. This simple web page was built using webpack and served by a webpack dev server. The design followed this [template](https://web.archive.org/web/20180320194056/http://www.getminimalist.com:80/)
 
 
 # Built with
@@ -11,7 +11,7 @@
 - VScode
 
 # Live Demo
-> The live Demo of the project is [here](https://meri-mg.github.io/To-Do-List-Project/dist/)
+> The live Demo of the project is [here](https://meri-mg.github.io/To-Do-List-Project/dist/../../../../dist/index.html)
 
 # Getting Started
 ## Prerequisites:
