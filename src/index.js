@@ -24,12 +24,39 @@ function checkOrder() {
   });
 }
 
-// cleat previous elements in the container
+// clear previous elements in the container
 
 function clearElement(element) {
   while (element.firstChild) {
     element.removeChild(element.firstChild);
   }
+}
+
+function editTask(e) {
+  const element = e.target;
+  const elDataset = element.dataset;
+  const index = elDataset.id;
+  const desc = e.target.innerText;
+  todoLists.forEach((task) => {
+    if (task.id === index) {
+      task.description = desc;
+    }
+  });
+  saveToStorage(todoLists);
+}
+
+function bindListenerTasks() {
+  const items = document.querySelectorAll('.items');
+  items.forEach((item) => {
+    item.removeEventListener('blur', (e) => {
+      editTask(e);
+    });
+  });
+  items.forEach((item) => {
+    item.addEventListener('blur', (e) => {
+      editTask(e);
+    });
+  });
 }
 // add todo lists to the object
 
@@ -45,6 +72,8 @@ function addTodo() {
     <i class="far fa-trash-alt delete"></i>
     </li>`;
   });
+
+  bindListenerTasks();
 }
 
 // UI of the project
@@ -52,23 +81,12 @@ function addTodo() {
 function displayTodo() {
   checkOrder();
   addTodo();
+  bindListenerTasks();
 }
 
 function reindex(todoLists) {
-  todoLists.forEach((todo, i)=>{
+  todoLists.forEach((todo, i) => {
     todo.id = i;
-  });
-  saveToStorage(todoLists);
-  displayTodo();
-}
-
-function editTask(e) {
-  const id = e.target.dataset.id;
-  const desc = e.target.innerText;
-  todoLists.forEach((task) => {
-    if (task.id === id) {
-      task.description = desc;
-    }
   });
   saveToStorage(todoLists);
   displayTodo();
@@ -109,7 +127,7 @@ form.addEventListener('submit', (e) => {
 
 // delete the task
 
-listContainer.addEventListener('dblclick', (e) => {
+listContainer.addEventListener('click', (e) => {
   const text = document.querySelector('.items').textContent;
   if (e.target.classList.contains('list-container')) {
     deleteTodoList(e.target);
@@ -126,7 +144,7 @@ listContainer.addEventListener('dblclick', (e) => {
   });
 });
 
-// delete all completed
+// clear all completed
 
 clearCompleted.addEventListener('click', () => {
   todoLists = todoLists.filter((item) => item.completed === false);

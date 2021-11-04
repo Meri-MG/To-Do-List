@@ -9,7 +9,7 @@ body {
 
 .d-flex {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
 }
@@ -79,6 +79,7 @@ main {
 .items {
   flex: 1;
   margin-left: 10px;
+  padding-left: 10px;
 }
 
 .items.linethrough {
@@ -90,6 +91,10 @@ main {
   outline: 0 solid transparent;
 }
 
+[contenteditable]:hover {
+  background-color: rgba(0, 0, 0, 0.24);
+}
+
 .checkbox:hover {
   transform: scale(1.1);
   cursor: pointer;
@@ -97,6 +102,7 @@ main {
 
 .dots {
   margin-right: 5px;
+  margin-left: 15px;
 }
 
 .delete {
