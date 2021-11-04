@@ -11,7 +11,7 @@
 - VScode
 
 # Live Demo
-> The live Demo of the project is [here](https://meri-mg.github.io/To-Do-List/dist/)
+> The live Demo of the project is [here](https://meri-mg.github.io/To-Do-List/)
 
 # Getting Started
 ## Prerequisites:
