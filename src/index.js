@@ -42,8 +42,6 @@ function changeTask(e) {
       task.description = desc;
     }
   });
-
-  console.log(todoLists);
   saveToStorage(todoLists);
 }
 
@@ -138,12 +136,11 @@ listContainer.addEventListener('click', (e) => {
   if (e.target.classList.contains('delete')) {
     todoLists = todoLists.filter((item) => item.description !== task);
     reindex(todoLists);
-    // saveToStorage(todoLists);
     window.location.reload();
   }
 });
 
-// delete all completed
+// clear all completed
 
 clearCompleted.addEventListener('click', () => {
   todoLists = todoLists.filter((item) => item.completed === false);
