@@ -2,7 +2,7 @@
 > In this project was built a simple list of To Do tasks. The functionality was implemented according to the specifications listed in the lesson. This simple web page was built using webpack and served by a webpack dev server. The design followed this [template](https://web.archive.org/web/20180320194056/http://www.getminimalist.com:80/)
 
 
-![To_DO_List](https://meri-mg.github.io/To-Do-List/master/todo.png)
+![To_DO_List](https://meri-mg.github.io/To-Do-List/todo.png)
 
 # Built with
 - HTML5
