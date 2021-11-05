@@ -143,3 +143,14 @@ section {
 h2 {
   text-align: center;
 }
+
+@media (max-width: 480px) {
+  main,
+  section {
+    width: 90%;
+  }
+
+  .title-container {
+    width: 100%;
+  }
+}
