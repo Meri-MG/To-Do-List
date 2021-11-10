@@ -1,5 +1,7 @@
-import { addTodoToList, deleteTodoList } from './add_remove.js';
+import { addTodoToList } from './add_remove.js';
+
 const jsdom = require('jsdom');
+
 const { JSDOM } = jsdom;
 
 const dom = new JSDOM(`<!DOCTYPE html><ul class="d-flex todo-lists"></ul>`); // eslint-disable-line
@@ -27,8 +29,8 @@ describe('Add to the List Function', () => {
     expect(list[3].id).toBe(3);
   });
 });
-test('remove form the dom', ()=> {
-    document.body.innerHTML = `
+test('remove form the dom', () => {
+  document.body.innerHTML = `
     <li class="list-container d-flex">
       <input type="checkbox" class="checkbox">
       <p class="items show"   contenteditable="true">Hello Todo's</p>
@@ -36,8 +38,7 @@ test('remove form the dom', ()=> {
       <i class="far fa-trash-alt show delete"></i>
     </li>
     `;
-    const element = document.querySelector('.list-container');
+  const element = document.querySelector('.list-container');
   expect(element.children[2].classList.contains('show')).toBe(false);
   expect(element.children[3].classList.contains('show')).toBeTruthy();
-})
-
+});
