@@ -1,27 +1,27 @@
-TN:
-SF:src/add_remove.js
-FN:1,addTodoToList
-FN:7,deleteTodoList
-FNF:2
-FNH:1
-FNDA:4,addTodoToList
-FNDA:0,deleteTodoList
-DA:2,4
-DA:3,4
-DA:4,4
-DA:8,0
-DA:9,0
-DA:10,0
-DA:11,0
-DA:14,0
-DA:15,0
-DA:16,0
-DA:20,1
-LF:11
-LH:4
-BRDA:1,0,0,0
-BRDA:8,1,0,0
-BRDA:8,1,1,0
-BRF:3
-BRH:0
-end_of_record
+tn:
+  sf:src/add_remove.js
+  fn:1,addtodotolist
+  fn:7,deletetodolist
+  fnf:2
+  fnh:1
+  fnda:4,addtodotolist
+  fnda:0,deletetodolist
+  da:2,4
+  da:3,4
+  da:4,4
+  da:8,0
+  da:9,0
+  da:10,0
+  da:11,0
+  da:14,0
+  da:15,0
+  da:16,0
+  da:20,1
+  lf:11
+  lh:4
+  brda:1,0,0,0
+  brda:8,1,0,0
+  brda:8,1,1,0
+  brf:3
+  brh:0
+;
