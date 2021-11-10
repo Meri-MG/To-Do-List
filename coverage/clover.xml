@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1636454980567" clover="3.2.0">
-  <project timestamp="1636454980567" name="All files">
-    <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="1" elements="6" coveredelements="5" complexity="0" loc="4" ncloc="4" packages="1" files="1" classes="1"/>
-    <file name="add_remove.js" path="/home/meri/To-Do-List/src/add_remove.js">
-      <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="4" count="1" type="stmt"/>
+<coverage generated="1636543366169" clover="3.2.0">
+  <project timestamp="1636543366169" name="All files">
+    <metrics statements="11" coveredstatements="4" conditionals="3" coveredconditionals="0" methods="2" coveredmethods="1" elements="16" coveredelements="5" complexity="0" loc="11" ncloc="11" packages="1" files="1" classes="1"/>
+    <file name="add_remove.js" path="/home/aku/Documents/Microverse/meri/To-Do-List/src/add_remove.js">
+      <metrics statements="11" coveredstatements="4" conditionals="3" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <line num="2" count="4" type="stmt"/>
+      <line num="3" count="4" type="stmt"/>
+      <line num="4" count="4" type="stmt"/>
+      <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="9" count="0" type="stmt"/>
+      <line num="10" count="0" type="stmt"/>
+      <line num="11" count="0" type="stmt"/>
+      <line num="14" count="0" type="stmt"/>
+      <line num="15" count="0" type="stmt"/>
+      <line num="16" count="0" type="stmt"/>
       <line num="20" count="1" type="stmt"/>
     </file>
   </project>
