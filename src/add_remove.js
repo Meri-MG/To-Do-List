@@ -15,5 +15,5 @@ export function deleteTodoList(element) {
     element.classList.add('show');
   }
 }
-
-export default { deleteTodoList, addTodoToList };
+// export default { deleteTodoList, addTodoToList };
+module.exports = { addTodoToList, deleteTodoList };

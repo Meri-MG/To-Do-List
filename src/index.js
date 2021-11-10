@@ -8,7 +8,6 @@ const clearCompleted = document.querySelector('.btn');
 let todoLists = [];
 
 // check the order of the todo lists
-
 function checkOrder() {
   todoLists.sort((a, b) => {
     const index1 = a.id;
