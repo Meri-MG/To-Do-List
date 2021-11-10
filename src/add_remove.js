@@ -9,7 +9,6 @@ export function deleteTodoList(element) {
     element.children[2].classList.remove('none');
     element.children[3].classList.remove('show');
     element.classList.remove('show');
-   
   } else {
     element.children[2].classList.add('none');
     element.children[3].classList.add('show');
