@@ -8,6 +8,7 @@ export function saveToStorage(list) {
 }
 
 function checkCompleted(list, task, element, bool) {
+  list = [];
   list.forEach((item) => {
     if (item.description === task) {
       item.completed = bool; // local
@@ -18,7 +19,9 @@ function checkCompleted(list, task, element, bool) {
       element.nextElementSibling.classList.remove('linethrough');
     }
   });
+  return list;
 }
+
 
 export function completed(element, list) {
   element.addEventListener('change', () => {
@@ -32,4 +35,6 @@ export function completed(element, list) {
   });
 }
 
-export default { completed, getFromStorage, saveToStorage };
+export default { completed, getFromStorage, saveToStorage, checkCompleted };
+
+module.exports = { checkCompleted };

@@ -1,4 +1,4 @@
-import './style.css';
+// import './style.css';
 import { completed, saveToStorage, getFromStorage } from './interactive.js';
 import { addTodoToList, deleteTodoList } from './add_remove.js';
 
@@ -147,3 +147,5 @@ clearCompleted.addEventListener('click', () => {
   saveToStorage(todoLists);
   window.location.reload();
 });
+
+module.exports = { changeTask };
