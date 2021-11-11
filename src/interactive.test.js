@@ -1,6 +1,6 @@
 const jsdom = require('jsdom');
 
-const checkCompleted = require('./interactive.js');
+const { checkCompleted } = require('./interactive.js');
 
 const { JSDOM } = jsdom;
 
