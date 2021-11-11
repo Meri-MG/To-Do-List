@@ -22,7 +22,6 @@ function checkCompleted(list, task, element, bool) {
   return list;
 }
 
-
 export function completed(element, list) {
   element.addEventListener('change', () => {
     const task = element.nextElementSibling.innerHTML;
@@ -35,6 +34,6 @@ export function completed(element, list) {
   });
 }
 
-export default { completed, getFromStorage, saveToStorage, checkCompleted };
+export default { completed, getFromStorage, saveToStorage };
 
 module.exports = { checkCompleted };
